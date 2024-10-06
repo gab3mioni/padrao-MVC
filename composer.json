@@ -1,0 +1,17 @@
+{
+    "name": "gab3mioni/padrao-mvc",
+    "description": "Aplicação PHP MVC com URL amigável.",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gabriel Mioni",
+            "email": "gabrielmionibastos@gmail.com"
+        }
+    ],
+    "require": {}
+}
