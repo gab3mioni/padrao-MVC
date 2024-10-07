@@ -1,6 +1,8 @@
-# Gerenciador de Usuários
+# Padrao MVC
 
-Uma aplicação web para gerenciamento de usuários, permitindo criar, editar e excluir usuários de forma intuitiva, utilizando PHP e Bootstrap para a interface.
+Aplicação MVC em PHP com URL amigável, apenas para fins de estudos e reutilização em outros projetos futuros.
+
+
 
 ## 🚀 Começando
 
