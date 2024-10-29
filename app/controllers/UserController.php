@@ -20,7 +20,7 @@ class UserController extends Controller
             $name = $_POST['name'];
             $userModel = new UserModel();
             $userModel->createUser($name);
-            header('Location: /user');
+            header('Location: /padrao-MVC/public/user');
             exit();
         }
     }
@@ -32,7 +32,7 @@ class UserController extends Controller
             $name = $_POST['name'];
             $userModel = new UserModel();
             $userModel->updateUser($id, $name);
-            header('Location: /user');
+            header('Location: /padrao-MVC/public/user');
             exit();
         }
     }
@@ -43,7 +43,7 @@ class UserController extends Controller
             $id = $_POST['id'];
             $userModel = new UserModel();
             $userModel->deleteUser($id);
-            header('Location: /user');
+            header('Location: /padrao-MVC/public/user');
             exit();
         }
     }
