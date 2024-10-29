@@ -79,7 +79,7 @@ Para implantar a aplicação em um servidor de produção, siga as instruções 
 
 ## 📌 Versão
 
-Nós usamos [Git 2,45,2](https://git-scm.com/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/gab3mioni/padrao-MVC/tags).
+Nós usamos [Git 2.45.2](https://git-scm.com/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/gab3mioni/padrao-MVC/tags).
 
 ## ✒️ Autores
 
