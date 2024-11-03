@@ -75,7 +75,6 @@ Para implantar a aplicação em um servidor de produção, siga as instruções 
 * [PHP](https://www.php.net/) - Linguagem de programação
 * [Composer](https://getcomposer.org/) - Gerenciador de dependências
 * [Bootstrap](https://getbootstrap.com/) - Framework CSS para layout responsivo
-* [jQuery](https://jquery.com/) - Biblioteca JavaScript
 
 ## 📌 Versão
 
