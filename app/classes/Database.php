@@ -15,9 +15,4 @@ class Database
             die('Conexão falha: ' . $e->getMessage());
         }
     }
-
-    public function query($sql)
-    {
-        return $this->pdo->query($sql);
-    }
 }
