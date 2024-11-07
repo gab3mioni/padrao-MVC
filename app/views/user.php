@@ -7,50 +7,62 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container mt-5">
-    <h1 class="text-center">Usuários</h1>
-    <form action="user/create" method="POST" class="mb-4">
-        <div class="input-group">
-            <input type="text" name="name" class="form-control" placeholder="Nome do Usuário" required>
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="submit">Adicionar</button>
+
+<header class="container text-center my-4">
+    <h1>Usuários</h1>
+</header>
+
+<main class="container mt-5">
+    <section aria-labelledby="form-section">
+        <h2 id="form-section" class="sr-only">Adicionar Usuário</h2>
+        <form action="user/create" method="POST" class="mb-4" aria-label="Adicionar novo usuário">
+            <div class="input-group">
+                <label for="userNameInput" class="sr-only">Nome do Usuário</label>
+                <input type="text" id="userNameInput" name="name" class="form-control" placeholder="Nome do Usuário"
+                       required>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Adicionar</button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </section>
 
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Ações</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($data['users'] as $user): ?>
+    <section aria-labelledby="user-table">
+        <h2 id="user-table" class="sr-only">Lista de Usuários</h2>
+        <table class="table table-bordered" aria-describedby="user-table">
+            <thead>
             <tr>
-                <td><?php echo htmlspecialchars($user->id); ?></td>
-                <td><?php echo htmlspecialchars($user->name); ?></td>
-                <td>
-                    <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal"
-                            data-id="<?php echo htmlspecialchars($user->id); ?>"
-                            data-name="<?php echo htmlspecialchars($user->name); ?>">
-                        Editar
-                    </button>
-                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"
-                            data-id="<?php echo htmlspecialchars($user->id); ?>">
-                        Excluir
-                    </button>
-                </td>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Ações</th>
             </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            <?php foreach ($data['users'] as $user): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($user->id); ?></td>
+                    <td><?php echo htmlspecialchars($user->name); ?></td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal"
+                                data-id="<?php echo htmlspecialchars($user->id); ?>"
+                                data-name="<?php echo htmlspecialchars($user->name); ?>">
+                            Editar
+                        </button>
+                        <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"
+                                data-id="<?php echo htmlspecialchars($user->id); ?>">
+                            Excluir
+                        </button>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </section>
 
-    <div class="text-center mt-3">
+    <footer class="text-center mt-3">
         <a href="home" class="btn btn-secondary">Ir para Home</a>
-    </div>
-</div>
+    </footer>
+</main>
 
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -78,7 +90,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
