@@ -24,8 +24,7 @@ class UserController extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = htmlspecialchars(trim($_POST['name'] ?? ''), ENT_QUOTES, 'UTF-8');
-            $userModel = new UserModel();
-            $userModel->createUser($name);
+            $this->userModel->createUser($name);
             header('Location: /padrao-MVC/public/user');
             exit();
         }
@@ -36,8 +35,7 @@ class UserController extends Controller
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'];
             $name = htmlspecialchars(trim($_POST['name'] ?? ''), ENT_QUOTES, 'UTF-8');
-            $userModel = new UserModel();
-            $userModel->updateUser($id, $name);
+            $this->userModel->updateUser($id, $name);
             header('Location: /padrao-MVC/public/user');
             exit();
         }
@@ -47,8 +45,7 @@ class UserController extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'];
-            $userModel = new UserModel();
-            $userModel->deleteUser($id);
+            $this->userModel->deleteUser($id);
             header('Location: /padrao-MVC/public/user');
             exit();
         }
