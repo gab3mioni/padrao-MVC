@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Core\Controller;
 use App\Models\UserModel;
+use App\Helpers\UrlHelper;
 
 class UserController extends Controller
 {
@@ -24,8 +25,9 @@ class UserController extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = htmlspecialchars(trim($_POST['name'] ?? ''), ENT_QUOTES, 'UTF-8');
+
             $this->userModel->createUser($name);
-            header('Location: /padrao-MVC/public/user');
+            header('Location: ' . UrlHelper::base_url('user'));
             exit();
         }
     }
@@ -35,8 +37,9 @@ class UserController extends Controller
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'];
             $name = htmlspecialchars(trim($_POST['name'] ?? ''), ENT_QUOTES, 'UTF-8');
+
             $this->userModel->updateUser($id, $name);
-            header('Location: /padrao-MVC/public/user');
+            header('Location: ' . UrlHelper::base_url('user'));
             exit();
         }
     }
@@ -45,8 +48,9 @@ class UserController extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'];
+
             $this->userModel->deleteUser($id);
-            header('Location: /padrao-MVC/public/user');
+            header('Location: ' . UrlHelper::base_url('user'));
             exit();
         }
     }
