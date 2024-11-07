@@ -7,14 +7,14 @@ use App\Models\UserModel;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(): void
     {
         $userModel = new UserModel();
         $users = $userModel->getAllUsers();
         $this->view('user', ['users' => $users]);
     }
 
-    public function create()
+    public function create(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = $_POST['name'];
@@ -25,7 +25,7 @@ class UserController extends Controller
         }
     }
 
-    public function update()
+    public function update(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'];
@@ -37,7 +37,7 @@ class UserController extends Controller
         }
     }
 
-    public function delete()
+    public function delete(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'];

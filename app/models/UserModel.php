@@ -14,20 +14,20 @@ class UserModel
         $this->pdo = $pdo;
     }
 
-    public function getAllUsers()
+    public function getAllUsers(): array
     {
         $stmt = $this->pdo->query("SELECT * FROM users");
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function createUser($name)
+    public function createUser($name): void
     {
         $stmt = $this->pdo->prepare("INSERT INTO users (name) VALUES (:name)");
         $stmt->bindParam(':name', $name);
         $stmt->execute();
     }
 
-    public function updateUser($id, $name)
+    public function updateUser($id, $name): void
     {
         $stmt = $this->pdo->prepare("UPDATE users SET name = :name WHERE id = :id");
         $stmt->bindParam(':id', $id);
@@ -35,7 +35,7 @@ class UserModel
         $stmt->execute();
     }
 
-    public function deleteUser($id)
+    public function deleteUser($id): void
     {
         $stmt = $this->pdo->prepare("DELETE FROM users WHERE id = :id");
         $stmt->bindParam(':id', $id);
