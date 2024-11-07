@@ -7,10 +7,16 @@ use App\Models\UserModel;
 
 class UserController extends Controller
 {
+    private $userModel;
+
+    public function __construct()
+    {
+        $this->userModel = new UserModel();
+    }
+
     public function index(): void
     {
-        $userModel = new UserModel();
-        $users = $userModel->getAllUsers();
+        $users = $this->userModel->getAllUsers();
         $this->view('user', ['users' => $users]);
     }
 
