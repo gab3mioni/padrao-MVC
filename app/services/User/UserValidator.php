@@ -21,6 +21,6 @@ class UserValidator
     public function verifyDuplicateName(string $name): bool
     {
         $existingUser = $this->userModel->findUserByName($name);
-        return $existingUser !== null;
+        return $existingUser !== false;
     }
 }
