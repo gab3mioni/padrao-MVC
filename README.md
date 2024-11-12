@@ -1,6 +1,6 @@
 # Padrao MVC
 
-Aplicação MVC em PHP com URL amigável, apenas para fins de estudos e reutilização em outros projetos futuros.
+Aplicação MVC em PHP com URL amigável.
 
 
 
