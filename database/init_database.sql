@@ -1,6 +1,6 @@
-CREATE DATABASE padrao_mvc;
+CREATE DATABASE IF NOT EXISTS {{DB_NAME}};
 
-USE padrao_mvc;
+USE {{DB_NAME}};
 
 CREATE TABLE users
 (
